@@ -10,7 +10,7 @@ namespace Pong
     class Update {
 
 
-        public static Timer timer = new Timer();
+     
         public static ConsoleKeyInfo keyinfo;
         public static bool running;
 

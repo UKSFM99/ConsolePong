@@ -38,7 +38,7 @@ namespace Pong
             while (true)
             {
                Reset();
-               // Console.WriteLine("Tick");
+              
                 while (GetTicks() < 50) ;
                 Update.logic();
         
