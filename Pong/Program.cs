@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -12,29 +13,22 @@ namespace Pong
         static void Main(string[] args)
         {
 
-            Thread input = new Thread(new ThreadStart(Controller.keyPressedEvent));
-            Thread update = new Thread(new ThreadStart(stuff));
-            input.Start();
-            update.Start();
-            input.Join();
-            update.Join();
-       
+            BackgroundWorker bw = new BackgroundWorker();
+            bw.DoWork += new DoWorkEventHandler(Controller.keyPressedEvent);
+            bw.RunWorkerAsync();
             Console.SetWindowSize(100, 30);
 
-
+            Timer.GameLoop();
            
 
-          
 
-            
-       
+
+
+
             Console.ReadLine();
         }
 
 
-        public static void stuff() {
-
-            Update.drawRect(2, 10, 0, 0);
-        }
+       
     }
 }
