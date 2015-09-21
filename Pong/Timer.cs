@@ -42,7 +42,7 @@ namespace Pong
                 while (GetTicks() < 50) ;
                 Update.logic();
         
-            }
+            } //ticktock
         }
 
     }
